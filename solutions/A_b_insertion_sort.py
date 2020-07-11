@@ -1,7 +1,7 @@
 """
 A. Make pythonic solutions for each of the following data structure
 and algorithm problems.
-a) Insertion sort
+b) Insertion sort
 """
 lst = [12, 8, 6, 14, 9, 5, 1, 6]
 
