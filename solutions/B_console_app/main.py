@@ -1,4 +1,7 @@
-from .course import AllCourses
+from IT_academy.student import Student
+from IT_academy.course import AllCourses
+from IT_academy.display import display_student_data
+
 
 
 def main():
@@ -10,6 +13,7 @@ def main():
     """)
     courses = AllCourses()
     courses.display_course_data()
+    display_student_data()
 
 
 if __name__ == '__main__':
