@@ -35,6 +35,19 @@ class AllCourses(Course):
         }
     ]
 
+    def display_course_data(self):
+        print('All Courses ')
+        print('-' * 30)
+        for course in self.all_courses:
+            print('Name: {}'.format(course['name']))
+            print('Duration: {}'.format(course['duration']))
+            print('-' * 30)
+
     def add_course(self, course_name, course_duration):
         course = {'name': course_name, 'duration': course_duration}
         self.all_courses.append(course)
+
+
+if __name__ == '__main__':
+    courses = AllCourses()
+    courses.display_course_data()

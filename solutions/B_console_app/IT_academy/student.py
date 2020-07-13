@@ -2,15 +2,6 @@ import csv
 from .course import Course
 
 
-# class Course:
-#     total_cost = 20000
-#     one_installment_cost = total_cost
-#     two_installment_cost = total_cost / 2
-#
-#     def set_total_cost(self, total_cost):
-#         self.total_cost = total_cost
-#
-
 class Student(Course):
     total_deposited = 0
     two_installments = False

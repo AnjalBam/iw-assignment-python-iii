@@ -1,4 +1,5 @@
-import csv, pprint
+import csv
+import pprint
 
 
 def display_student_data():

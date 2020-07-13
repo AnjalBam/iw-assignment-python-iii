@@ -77,9 +77,6 @@ Payment Plan: {'Two Installments'
             else:
                 self.update_data()
 
-    def register(self):
-        pass
-
 
 if __name__ == '__main__':
     regs = RegisterStudent()
