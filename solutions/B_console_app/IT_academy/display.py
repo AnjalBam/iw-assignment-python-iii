@@ -9,6 +9,7 @@ def display_student_data():
                   'course_status',
                   'total_due', 'total_deposited', 'two_installment_plan']
         detail_reader = csv.DictReader(student_details, fieldnames=fields)
+        print('*' * 30)
         print('All Student Details')
         print('*' * 30)
         for detail in detail_reader:

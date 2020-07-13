@@ -1,8 +1,30 @@
 from .student import Student
+from .course import Course
 
 
 class RegisterStudent:
+    name = ''
+    age = ''
+    address = ''
+    email = ''
+    in_two_installments = False
+    course_detail = Course()
+
     def __init__(self):
+        print('*' * 30)
+        print('Thank you for Registering for the IW Academy!')
+        print('*' * 30)
+        print('Since you\'ve viewed the courses and are interested in our '
+              'courses, here\'s the payment plan.')
+        print(f'The total course cost is Rs.{self.course_detail.total_cost}')
+        print(f'You have two types of payment options:\n1. One installment '
+              f'payment (Rs.{self.course_detail.one_installment_cost})\n'
+              f'2. Two installment payment (Rs.'
+              f'{self.course_detail.two_installment_cost}')
+        _ = input('Please hit enter to continue... ')
+        self.register()
+
+    def register(self):
         self.name = input('Enter your name: ')
         self.age = input('How old are you? ')
         self.address = input('Please enter your address: ')
@@ -24,6 +46,7 @@ class RegisterStudent:
                 is_choice_invalid = False
             else:
                 print('Invalid Choice! Please enter valid value!')
+        self.assert_data()
 
     def update_data(self):
         print("""
@@ -64,13 +87,14 @@ Name: {self.name}
 Age: {self.age}
 E-mail: {self.email}
 Address: {self.address}
-Payment Plan: {'Two Installments' 
+Payment Plan: {'Two Installments'
             if self.in_two_installments else 'In Two Installments'}
 """)
             is_valid = input('Is Data shown above valid? (y/n) ')
             if is_valid == 'y' or is_valid == 'Y':
-                student = Student(self.name, self.address, self.age, self.email,
-                                  self.in_two_installments)
+                student = Student()
+                student.set_data(self.name, self.age, self.email,
+                                 self.address, self.in_two_installments)
                 student.save()
                 # print('Valid Data!')
                 is_asserted = True
